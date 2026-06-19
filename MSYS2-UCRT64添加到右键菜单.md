@@ -32,13 +32,5 @@ Windows Registry Editor Version 5.00
 @="\"D:\\dev\\msys64\\msys2_shell.cmd\" -ucrt64 -where \"%1\""
 ```
 
----
 
-* **`[HKEY_CLASSES_ROOT\\Directory\\Background\\shell\\UCRT64]`** 控制在文件夹空白处、桌面空白处右键弹出的菜单。
-* **`[HKEY_CLASSES_ROOT\\Directory\\shell\\UCRT64]`** 控制在文件夹图标、或侧边栏文件夹目录上右键弹出的菜单。
-* **`-ucrt64`** 指定 MSYS2 启动 UCRT64 编译环境（使用 GCC/Clang 运行时基于全新的 `ucrtbase.dll`）。
-* **`-where`** 官方提供的路径传递参数，用来指定终端启动时的初始工作目录。
-* **`\"%V\"` 与 `\"%1\"**` * 在 `Background`（空白处）中，Windows 使用 `%V` 标识当前目录。
-* 在 `Directory`（图标上）中，Windows 规范首选使用 `%1` 标识被选中的文件夹路径。
-"""
 
