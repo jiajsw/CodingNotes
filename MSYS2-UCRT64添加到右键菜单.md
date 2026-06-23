@@ -32,5 +32,26 @@ Windows Registry Editor Version 5.00
 @="\"D:\\dev\\msys64\\msys2_shell.cmd\" -ucrt64 -where \"%1\""
 ```
 
+## 继承 windows 环境变量的脚本
+
+```registry
+Windows Registry Editor Version 5.00
+
+# 1. 在文件夹空白处右键
+[HKEY_CLASSES_ROOT\Directory\Background\shell\UCRT64]
+@="UCRT64 终端"
+"Icon"="D:\\dev\\msys64\\ucrt64.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\UCRT64\command]
+@="cmd /c \"set MSYS2_PATH_TYPE=inherit && \"D:\\dev\\msys64\\msys2_shell.cmd\" -ucrt64 -where \"%V\"\""
+
+# 2. 在文件夹图标上右键
+[HKEY_CLASSES_ROOT\Directory\shell\UCRT64]
+@="UCRT64 终端"
+"Icon"="D:\\dev\\msys64\\ucrt64.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\UCRT64\command]
+@="cmd /c \"set MSYS2_PATH_TYPE=inherit && \"D:\\dev\\msys64\\msys2_shell.cmd\" -ucrt64 -where \"%1\"\""
+```
 
 
